@@ -1,0 +1,55 @@
+#backgroundImage {
+    background-image: url("../../images/starBackground\(Cut\).jpg");
+    background-size: cover;
+    //max-width: 100%;
+    height: 100%;
+    // width: 100%;
+    // object-fit: scale-down;
+}
+
+@media only screen and (min-device-width: 400px) {
+    #backgroundImage {
+        background-image: url("../../images/starBackground\(Original\).jpg");
+        background-size: cover;
+        height: 100%;
+    }
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Arial", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+        "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: $dark-grey;
+    color: $mid-blue;
+    // -webkit-text-fill-color: $mid-blue;
+    // -webkit-text-stroke: 1px;
+}
+
+// code {
+//     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+// }
+
+.content-container {
+    margin: 0 auto;
+    max-width: 60rem;
+    padding: 0;
+    height: 100rem;
+    font-size: calc(12px + 2vmin);
+}
+
+// .App-header {
+//     background-color: #282c34;
+//     min-height: 100vh;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//     font-size: calc(10px + 2vmin);
+//     color: white;
+// }
+
+// .backgroundColor {
+//     background-color: $dark-grey;
+// }
