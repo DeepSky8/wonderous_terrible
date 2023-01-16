@@ -1,4 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import License from "./License";
+
 
 const Introduction = () => {
     return (
@@ -12,10 +15,9 @@ const Introduction = () => {
             <span className="attribution">
                 <p className="noBottomMargin">Designed by Ian Hamilton</p>
                 <p className="noMargin">with assistance by Richard Kelly</p>
-                <p className='noTopMargin'>Photo by <a href="https://unsplash.com/@von_co?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ivana Cajina</a> on <a href="https://unsplash.com/photos/asuyh-_ZX54?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-                </p>
+                <p className='noTopMargin'>Photo by <a href="https://unsplash.com/@von_co?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ivana Cajina</a> on <a href="https://unsplash.com/photos/asuyh-_ZX54?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
+                <Link to="/fullAttribution">Full Attribution and License available here</Link>
             </span>
-
 
         </div>
     )

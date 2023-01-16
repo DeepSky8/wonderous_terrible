@@ -7,7 +7,7 @@ import Body from "./bodyElements/Body";
 const Home = () => {
     return (
         <div className="page-container">
-            <div id="backgroundImage">
+            <div>
                 <Header />
                 <Body />
             </div>

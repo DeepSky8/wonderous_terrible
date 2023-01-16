@@ -4,6 +4,7 @@ import Home from "../components/Home";
 import Introduction from "../components/introduction/Introduction";
 import NewSpecies from "../components/newSpecies/NewSpecies";
 import ExploreSpace from "../components/exploreSpace/ExploreSpace";
+import FullAttribution from "../components/introduction/FullAttribution";
 
 // const AppRouter = () => {
 //     return (
@@ -34,13 +35,17 @@ const AppRouter = createBrowserRouter([
                 element: <Introduction />,
             },
             {
-                path: "/newSpecies",
+                path: "/newSpecies/*",
                 element: <NewSpecies />,
             },
             {
                 path: "/explore/*",
                 element: <ExploreSpace />,
             },
+            {
+                path: "/fullAttribution",
+                element: <FullAttribution />
+            }
         ]
     }
 ])
