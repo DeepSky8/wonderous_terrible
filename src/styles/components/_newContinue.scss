@@ -1,0 +1,41 @@
+.newContinue-container {
+    display: flex;
+    justify-content: center;
+    margin-top: $l-size;
+    margin-bottom: $m-size;
+
+    .newContinue-link {
+        text-align: center;
+        min-width: 25%;
+    }
+
+    a {
+        margin: $xs-size;
+        padding: $xs-size;
+        outline: auto;
+    }
+
+    a:visited {
+        outline: auto;
+    }
+
+
+    @media only screen and (min-device-width: $desktop-breakpoint) {
+        // margin-top: $l-size;
+
+        .newContinue-link {
+            text-align: center;
+            min-width: 50%;
+        }
+
+        a {
+            margin: $s-size;
+            padding: $s-size;
+            outline: auto;
+        }
+
+        a:visited {
+            outline: auto;
+        }
+    }
+}

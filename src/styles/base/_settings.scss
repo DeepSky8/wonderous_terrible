@@ -1,11 +1,10 @@
-
 // Colors
 $dark-grey: #282c34;
 $light-blue: #f0f8ff;
 $orange-tan: #e0c0a0;
 $mid-blue: #cfdfef;
 
-//Sizes
+// Sizes
 $xs-size: 0.6rem;
 $s-size: 1.2rem;
 $m-size: 1.6rem;
@@ -14,3 +13,19 @@ $xl-size: 4.8rem;
 $desktop-breakpoint: 45rem;
 
 // #a0c0e0
+
+// Links
+
+a {
+    text-decoration: none;
+    color: $mid-blue;
+}
+
+a:visited {
+    color: $mid-blue;
+}
+
+a:hover {
+    color: $orange-tan;
+    text-decoration: underline;
+}

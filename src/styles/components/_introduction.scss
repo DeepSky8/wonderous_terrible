@@ -1,0 +1,25 @@
+.introduction-container {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    // min-height: 50px;
+
+    .attribution {
+        // vertical-align: bottom;
+        position: absolute;
+        bottom: -0vh;
+    }
+
+    .noBottomMargin {
+        margin-bottom: 0;
+    }
+
+    .noMargin {
+        margin: 0;
+    }
+
+    .noTopMargin {
+        margin-top: 0;
+        // margin-bottom: 10px;
+    }
+}
