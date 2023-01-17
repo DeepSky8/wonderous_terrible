@@ -7,9 +7,12 @@ import Body from "./bodyElements/Body";
 const Home = () => {
     return (
         <div className="page-container">
-            <div>
-                <Header />
-                <Body />
+            <div className="display-container">
+                <div className="center-container">
+                    <Header />
+                    <Body />
+                </div>
+
             </div>
 
         </div>
