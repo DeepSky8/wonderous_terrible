@@ -5,7 +5,7 @@ const NewContinue = () => {
     return (
         <div className="newContinue-container">
             <span className="newContinue-link">
-                <Link to="/newSpecies">New Species</Link>
+                <Link to="/newSpecies/Biology">New Species</Link>
             </span>
             <span className="newContinue-link">
                 <Link to="/explore/">Explore Space</Link>

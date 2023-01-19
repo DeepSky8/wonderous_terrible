@@ -1,27 +1,29 @@
 .newContinue-container {
     display: flex;
     justify-content: center;
-    margin-top: $l-size;
+    margin-top: $m-size;
     margin-bottom: $m-size;
 
     .newContinue-link {
         text-align: center;
         min-width: 25%;
+        padding: $s-size 0;
     }
 
     a {
         margin: $xs-size;
         padding: $xs-size;
-        outline: auto;
+        // outline: auto;
+        @include border;
     }
 
     a:visited {
-        outline: auto;
+        @include border;
     }
-
 
     @media only screen and (min-device-width: $desktop-breakpoint) {
         // margin-top: $l-size;
+        // margin-bottom: $m-size;
 
         .newContinue-link {
             text-align: center;
@@ -31,11 +33,11 @@
         a {
             margin: $s-size;
             padding: $s-size;
-            outline: auto;
+            text-decoration: none;
         }
 
-        a:visited {
-            outline: auto;
-        }
+        // a:visited {
+
+        // }
     }
 }

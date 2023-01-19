@@ -1,0 +1,39 @@
+.pickDirection-container {
+    margin: $s-size auto $m-size;
+    justify-content: space-around;
+    text-align: center;
+    .pickDirection-buttons {
+        justify-content: space-around;
+        text-align: center;
+        display: flex;
+        margin: $s-size auto;
+    }
+
+    .directionValue {
+        display: flex;
+        // text-align: center;
+        justify-content: center;
+    }
+
+    .buttonShadow {
+        @include box-shadow-blue;
+    }
+
+    button {
+        @include border-square;
+        @include border-blue;
+        background-color: none;
+        background: none;
+
+        color: $mid-blue;
+        padding: $s-size;
+        text-decoration: none;
+        font-size: $calcFontSize;
+        margin: auto;
+        cursor: pointer;
+    }
+
+    // button:hover{
+
+    // }
+}

@@ -1,0 +1,59 @@
+.nextBar-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: fill;
+
+    a {
+        @include border;
+        color: $mid-blue;
+        padding: $xs-size;
+        margin: $xs-size;
+        width: fill;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: $orange-tan;
+    }
+
+    @media only screen and (min-device-width: $desktop-breakpoint) {
+        a {
+            @include border;
+            // color: $mid-blue;
+            padding: $s-size;
+            margin: $s-size;
+        }
+    }
+}
+
+.nextBar-container-blue {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: fill;
+
+    a {
+        @include border;
+        color: $mid-blue;
+        padding: $xs-size;
+        margin: $xs-size;
+        width: fill;
+        text-decoration: none;
+        @include box-shadow-blue;
+    }
+
+    a:hover {
+        color: $orange-tan;
+        @include box-shadow-orange;
+    }
+
+    @media only screen and (min-device-width: $desktop-breakpoint) {
+        a {
+            @include border;
+            // color: $mid-blue;
+            padding: $s-size;
+            margin: $s-size;
+        }
+    }
+}

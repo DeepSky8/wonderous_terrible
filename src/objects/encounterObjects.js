@@ -1,32 +1,37 @@
 
+const directionOptions = {
+    Homeworld: "You've chosen to return to your Homeworld",
+    Discover: "You've selected a promising patch of space to visit for the first time",
+    Revisit: "You've chosen to return to a previously-visited location"
+}
+
+const selectDestination = "Select a destination"
+const clickToTravel = "Click here to energize!"
 
 const newEncounter = {
-    0: `Homeworld`,
-    1: `Habitable Body`,
-    2: `Uninhabitable Body`,
-    3: `Station Or Craft, Inhabited`,
-    4: `Station Or Craft, Uninhabited`,
-    5: `Belt, Field, Or Nebula`,
-    6: `Anomaly`,
-    7: `Return to previous location`,
+    Habitable: `Habitable Body`,
+    Uninhabitable: `Uninhabitable Body`,
+    Inhabited: `Station Or Craft, Inhabited`,
+    Uninhabited: `Station Or Craft, Uninhabited`,
+    NaturalLocation: `Belt, Field, Or Nebula`,
+    Anomaly: `Anomaly`,
 }
 
 const discoverAction = {
     start: `Starting with the player to the `,
     end: ` of the GM, go around in a circle and each define one of its traits.`,
-    0: `right`,
-    1: `left`,
-    2: `right`,
-    3: `left`,
-    4: `right`,
-    5: `left`,
-    6: `left`,
-    7: 'Return to previous location',
+    Homeworld: `right`,
+    Habitable: `left`,
+    Uninhabitable: `right`,
+    Inhabited: `left`,
+    Uninhabited: `right`,
+    NaturalLocation: `left`,
+    Anomaly: `left`,
     finalStep: `Name and encounter this location.`
 }
 
 const encounterAction = {
-    0: {
+    Homeworld: {
         promptGM1: ``,
         promptPlayers: `Players choose one of the following prompts:`,
         promptGM2: `The GM then answers, and provides them with a situation.`,
@@ -36,7 +41,7 @@ const encounterAction = {
             "What question troubles it?",
         ]
     },
-    1: {
+    Habitable: {
         promptGM1: ``,
         promptPlayers: `Players choose one of the following prompts:`,
         promptGM2: `The GM then answers, and provides them with a situation.`,
@@ -46,7 +51,7 @@ const encounterAction = {
             "Who else has staked a claim?"
         ]
     },
-    2: {
+    Uninhabitable: {
         promptGM1: ``,
         promptPlayers: `Players choose one of the following prompts:`,
         promptGM1: `The GM then answers, and provides them with a situation.`,
@@ -56,7 +61,7 @@ const encounterAction = {
             "What resources can we exploit?",
         ]
     },
-    3: {
+    Inhabited: {
         promptGM1: ``,
         promptPlayers: `Players choose one of the following prompts:`,
         promptGM2: `The GM then answers, and provides them with a situation.`,
@@ -66,7 +71,7 @@ const encounterAction = {
             "Where are they going?",
         ]
     },
-    4: {
+    Uninhabited: {
         promptGM1: ``,
         promptPlayers: `Players choose one of the following prompts:`,
         promptGM2: `The GM then answers, and provides them with a situation.`,
@@ -76,7 +81,7 @@ const encounterAction = {
             "Where were they going?",
         ]
     },
-    5: {
+    NaturalLocation: {
         promptGM1: ``,
         promptPlayers: `Players choose one of the following prompts:`,
         promptGM2: `The GM then answers, and provides them with a situation.`,
@@ -86,7 +91,7 @@ const encounterAction = {
             "What can be found here?",
         ]
     },
-    6: {
+    Anomaly: {
         promptGM1: ``,
         promptPlayers: `Players choose one of the following prompts:`,
         promptGM2: `The GM then answers, and provides them with a situation.`,
@@ -96,12 +101,11 @@ const encounterAction = {
             "What esoteric principle is being warped?",
         ]
     },
-    7: 'Return to previous location',
     finalStep: `Name and encounter this location.`
 }
 
 const returnAction = {
-    0: {
+    Homeworld: {
         promptGM1: `The GM describes how the location has changed since the last visit.`,
         promptPlayers: `Players choose from the following prompts:`,
         promptGM2: `The GM answers the prompt, and provides a situation.`,
@@ -111,7 +115,7 @@ const returnAction = {
             "What new disaster looms?"
         ]
     },
-    1: {
+    Habitable: {
         promptGM1: `The GM describes how the location has changed since the last visit.`,
         promptPlayers: `Players choose from the following prompts:`,
         promptGM2: `The GM answers the prompt, and provides a situation.`,
@@ -121,7 +125,7 @@ const returnAction = {
             "What culture is burgeoning?"
         ]
     },
-    2: {
+    Uninhabitable: {
         promptGM1: `The GM describes how the location has changed since the last visit.`,
         promptPlayers: `Players choose from the following prompts:`,
         promptGM2: `The GM answers the prompt, and provides a situation.`,
@@ -131,7 +135,7 @@ const returnAction = {
             "What is trying to change the body?"
         ]
     },
-    3: {
+    Inhabited: {
         promptGM1: `The GM describes how the location has changed since the last visit.`,
         promptPlayers: `Players choose from the following prompts:`,
         promptGM2: `The GM answers the prompt, and provides a situation.`,
@@ -141,7 +145,7 @@ const returnAction = {
             "What history has been uncovered?"
         ]
     },
-    4: {
+    Uninhabited: {
         promptGM1: `The GM describes how the location has changed since the last visit.`,
         promptPlayers: `Players choose from the following prompts:`,
         promptGM2: `The GM answers the prompt, and provides a situation.`,
@@ -151,7 +155,7 @@ const returnAction = {
             "What object or site was discovered nearby?"
         ]
     },
-    5: {
+    NaturalLocation: {
         promptGM1: `The GM describes how the location has changed since the last visit.`,
         promptPlayers: `Players choose from the following prompts:`,
         promptGM2: `The GM answers the prompt, and provides a situation.`,
@@ -161,7 +165,7 @@ const returnAction = {
             "Who else has been here?"
         ]
     },
-    6: {
+    Anomaly: {
         promptGM1: `The GM describes how the location has changed since the last visit.`,
         promptPlayers: `Players choose from the following prompts:`,
         promptGM2: `The GM answers the prompt, and provides a situation.`,
@@ -171,6 +175,15 @@ const returnAction = {
             "Who else is affected?"
         ]
     },
-    7: 'Return to previous location',
     finalStep: `Update the location, then Leave A Mark.`
+}
+
+export {
+    directionOptions,
+    selectDestination,
+    clickToTravel,
+    newEncounter,
+    discoverAction,
+    encounterAction,
+    returnAction
 }

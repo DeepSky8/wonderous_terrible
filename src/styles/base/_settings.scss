@@ -11,8 +11,33 @@ $m-size: 1.6rem;
 $l-size: 3.2rem;
 $xl-size: 4.8rem;
 $desktop-breakpoint: 425px;
+$calcFontSize: calc(12px + 2vmin);
 
 // #a0c0e0
+
+.noMarginBottom {
+    margin-bottom: 0;
+}
+
+.noMargin {
+    margin: 0;
+}
+
+.noMarginTop {
+    margin-top: 0;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.autoMargin {
+    margin: auto;
+}
+
+.autoPadding {
+    padding: auto;
+}
 
 // Links
 
@@ -27,5 +52,122 @@ a:visited {
 
 a:hover {
     color: $orange-tan;
-    text-decoration: underline;
+    text-decoration: none;
+}
+
+// Mixins
+
+// Border and Outline Settings
+
+@mixin border {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 25px;
+}
+
+@mixin border-square {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0px;
+}
+
+@mixin border-blue {
+    border-color: $mid-blue;
+}
+
+@mixin border-orange {
+    border-color: $orange-tan;
+}
+
+@mixin outline {
+    outline-width: 1px;
+    outline-style: solid;
+}
+
+@mixin outline-blue {
+    outline-color: $mid-blue;
+}
+
+@mixin outline-orange {
+    outline-color: $orange-tan;
+}
+
+@mixin box-shadow-blue {
+    box-sizing: border-box;
+    box-shadow: 0 0 30px 0 $mid-blue;
+}
+
+@mixin box-shadow-orange {
+    box-sizing: border-box;
+    box-shadow: 0 0 30px 0 $orange-tan;
+}
+
+// @mixin box-shadow-blue {
+    
+// }
+
+//Nav-link display settings
+
+@mixin nav-link {
+    font-weight: 100;
+    color: $mid-blue;
+}
+
+@mixin nav-link-hover {
+    color: $orange-tan;
+    text-decoration: none;
+}
+
+@mixin nav-link-selected {
+    font-weight: bolder;
+    color: $orange-tan;
+    text-decoration: none;
+}
+
+@mixin nav-link-selected-hover {
+    color: $mid-blue;
+    cursor: default;
+    text-decoration: none;
+}
+
+// Nav-link spacing settings
+
+@mixin nav-link-padding-small {
+    padding: $xs-size;
+}
+
+@mixin nav-link-margin-small {
+    margin: $xs-size;
+}
+
+@mixin nav-link-wrapping-small {
+    text-align: center;
+    justify-content: center;
+    flex: row wrap;
+}
+
+@mixin nav-link-settings-small {
+    @include nav-link-margin-small;
+    @include nav-link-padding-small;
+    @include nav-link-wrapping-small;
+}
+
+@mixin nav-link-padding-large {
+    padding: $s-size;
+}
+
+@mixin nav-link-margin-large {
+    margin: $s-size;
+}
+
+@mixin nav-link-wrapping-large {
+    text-align: center;
+    justify-content: center;
+    flex: row wrap;
+}
+
+@mixin nav-link-settings-large {
+    @include nav-link-margin-large;
+    @include nav-link-padding-large;
+    @include nav-link-wrapping-large;
 }

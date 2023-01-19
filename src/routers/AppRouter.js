@@ -5,6 +5,9 @@ import Introduction from "../components/introduction/Introduction";
 import NewSpecies from "../components/newSpecies/NewSpecies";
 import ExploreSpace from "../components/exploreSpace/ExploreSpace";
 import FullAttribution from "../components/introduction/FullAttribution";
+import SpeciesDisplay from "../components/newSpecies/SpeciesDisplay";
+import NotFoundPage from "../components/NotFoundPage";
+import PickDirection from "../components/exploreSpace/PickDirection";
 
 // const AppRouter = () => {
 //     return (
@@ -29,6 +32,7 @@ const AppRouter = createBrowserRouter([
     {
         path: "/",
         element: <Home />,
+        errorElement: <NotFoundPage />,
         children: [
             {
                 index: true,
@@ -37,10 +41,19 @@ const AppRouter = createBrowserRouter([
             {
                 path: "/newSpecies/*",
                 element: <NewSpecies />,
+
             },
             {
                 path: "/explore/*",
                 element: <ExploreSpace />,
+                children: [
+                    {
+                        index: true,
+                        element: <PickDirection />
+                    },
+
+
+                ]
             },
             {
                 path: "/fullAttribution",
@@ -51,3 +64,10 @@ const AppRouter = createBrowserRouter([
 ])
 
 export default AppRouter
+
+// children:[
+//     {
+//         index: true,
+//         element: <SpeciesDisplay />
+//     }
+// ]
