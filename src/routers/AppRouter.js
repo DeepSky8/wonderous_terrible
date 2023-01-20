@@ -1,32 +1,17 @@
 import React from "react";
-import { BrowserRouter, createBrowserRouter, Route, Routes } from "react-router-dom";
+import { createBrowserRouter, redirect } from "react-router-dom";
 import Home from "../components/Home";
 import Introduction from "../components/introduction/Introduction";
 import NewSpecies from "../components/newSpecies/NewSpecies";
 import ExploreSpace from "../components/exploreSpace/ExploreSpace";
 import FullAttribution from "../components/introduction/FullAttribution";
-import SpeciesDisplay from "../components/newSpecies/SpeciesDisplay";
 import NotFoundPage from "../components/NotFoundPage";
 import PickDirection from "../components/exploreSpace/PickDirection";
-
-// const AppRouter = () => {
-//     return (
-//         <BrowserRouter>
-//             <div>
-//                 <Routes>
-//                     <Route index path="/" element={<Home />} />
-//                     <Route path="/newGame" />
-//                     <Route path="/activeGame" />
-
-//                 </Routes>
-
-
-//             </div>
-
-
-//         </BrowserRouter>
-//     )
-// }
+import DiscoverLocation from "../components/exploreSpace/discover/DiscoverLocation";
+import EncounterLocation from "../components/exploreSpace/encounter/EncounterLocation";
+import SpeciesDisplay from "../components/newSpecies/SpeciesDisplay";
+import DiscoverInstructions from "../components/exploreSpace/discover/DiscoverInstructions";
+import EncounterInstructions from "../components/exploreSpace/encounter/EncounterInstructions";
 
 const AppRouter = createBrowserRouter([
     {
@@ -39,9 +24,15 @@ const AppRouter = createBrowserRouter([
                 element: <Introduction />,
             },
             {
-                path: "/newSpecies/*",
+                path: "/newSpecies",
                 element: <NewSpecies />,
+                children: [
+                    {
+                        path: ':step',
+                        element: <SpeciesDisplay />
 
+                    }
+                ]
             },
             {
                 path: "/explore/*",
@@ -51,8 +42,27 @@ const AppRouter = createBrowserRouter([
                         index: true,
                         element: <PickDirection />
                     },
+                    {
+                        path: "discover",
+                        element: <DiscoverLocation />,
+                        children: [
+                            {
+                                path: ':location',
+                                element: <DiscoverInstructions />
+                            }
+                        ]
+                    },
+                    {
+                        path: "encounter",
+                        element: <EncounterLocation />,
+                        children: [
+                            {
+                                path: ':location',
+                                element: <EncounterInstructions />
+                            }
+                        ]
 
-
+                    },
                 ]
             },
             {
@@ -64,10 +74,3 @@ const AppRouter = createBrowserRouter([
 ])
 
 export default AppRouter
-
-// children:[
-//     {
-//         index: true,
-//         element: <SpeciesDisplay />
-//     }
-// ]

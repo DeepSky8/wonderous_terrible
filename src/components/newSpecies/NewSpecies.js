@@ -1,45 +1,44 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
-import { speciesHeader, speciesQuestions } from "../../objects/speciesObjects";
+import { Outlet, useParams } from "react-router-dom";
+import { discoverHomeworld, nextStep } from "../../objects/encounterObjects";
+import { speciesHeader } from "../../objects/speciesObjects";
 import NavBar from "../navBar/NavBar";
 import NextBar from "../navBar/NextBar";
-import SpeciesDisplay from "./SpeciesDisplay";
+
 
 const NewSpecies = () => {
-    let location = useLocation()
-    let step = location.pathname.split("/")[2]
-    const info = speciesQuestions[`species${step}`]
+    let { step } = useParams();
     const navArray = Object.keys(speciesHeader)
     const indexNow = navArray.indexOf(step)
+
     const next = (
         indexNow + 1 >= navArray.length
             ?
             {
-                title: 'Next: Explore Space',
-                link: '/explore/Homeworld/discover'
+                rootURL: '/explore/Discover/',
+                target: 'Homeworld',
+                title: nextStep + discoverHomeworld,
+                active: true,
             }
             :
             {
-                title: 'Next: ' + navArray[indexNow + 1],
-                link: navArray[indexNow + 1]
+                rootURL: '/newSpecies/',
+                target: navArray[indexNow + 1],
+                title: nextStep + navArray[indexNow + 1],
+                active: false,
             }
-
     )
-
-
-
 
     return (
 
         <div>
             <div className="nav-bar">
                 <NavBar
+                    rootURL={'/newSpecies/'}
                     navArray={navArray}
                 />
             </div>
-            <SpeciesDisplay
-                info={info}
-            />
+            <Outlet />
 
             <NextBar
                 next={next}
@@ -51,3 +50,7 @@ const NewSpecies = () => {
 }
 
 export default NewSpecies
+
+// <SpeciesDisplay
+// info={info}
+// />

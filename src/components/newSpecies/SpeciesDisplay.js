@@ -1,6 +1,11 @@
 import React from "react";
+import { useParams } from "react-router-dom";
+import { speciesQuestions } from "../../objects/speciesObjects";
 
-const SpeciesDisplay = ({ info }) => {
+const SpeciesDisplay = () => {
+    const { step } = useParams();
+    const info = speciesQuestions[step]
+
 
     return (
         <div className="species-display-container">

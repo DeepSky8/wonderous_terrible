@@ -2,3 +2,10 @@
     margin: $m-size;
     margin-bottom: 0;
 }
+
+@media only screen and (min-device-width: $desktop-breakpoint) {
+    .body-container {
+        margin: $m-size $l-size;
+
+    }
+}

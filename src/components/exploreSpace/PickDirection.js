@@ -1,17 +1,19 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { clickToTravel, directionOptions, selectDestination } from '../../objects/encounterObjects'
+import {
+    clickToTravel,
+    directionOptions,
+    selectDestination
+} from '../../objects/encounterObjects'
 import NextBar from "../navBar/NextBar";
 
 const PickDirection = () => {
-    const navigate = useNavigate()
     const directionArray = Object.entries(directionOptions)
     const [direction, setDirection] = useState('')
-    const [directionValue, setDirectionValue] = useState('')
+    const [value, setValue] = useState('')
 
     const click = (key) => {
         setDirection(key)
-        setDirectionValue(directionOptions[key])
+        setValue(directionOptions[key])
     }
 
     return (
@@ -27,12 +29,13 @@ const PickDirection = () => {
                     )
                 })}
             </div>
-            <p className="directionValue">{directionValue}</p>
+            <p className="directionValue">{value.description}</p>
             <NextBar
-                active={direction.length > 0}dd
+
                 next={
                     {
-                        link: direction,
+                        rootURL: value.rootURL,
+                        target: value.target,
                         title:
                             direction.length > 0
                                 ?
@@ -40,6 +43,7 @@ const PickDirection = () => {
                                 :
                                 selectDestination
                         ,
+                        active: direction.length > 0
                     }
                 }
             />

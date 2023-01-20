@@ -1,12 +1,31 @@
 
 const directionOptions = {
-    Homeworld: "You've chosen to return to your Homeworld",
-    Discover: "You've selected a promising patch of space to visit for the first time",
-    Revisit: "You've chosen to return to a previously-visited location"
+    Homeworld: {
+        description: "You've chosen to return to your Homeworld",
+        rootURL: '/explore/encounter/',
+        target: 'Homeworld'
+    },
+    Discover: {
+        description: "You've selected a promising target to visit for the first time",
+        target: 'discover',
+    },
+    Revisit: {
+        description: "You've chosen to return to a previously-visited location",
+        target: 'revisit',
+    }
 }
 
 const selectDestination = "Select a destination"
 const clickToTravel = "Click here to energize!"
+const nextStep = 'Next: '
+const discoverHomeworld = 'Discover your Homeworld'
+
+
+const locationOptions = {
+    Discover: 'discover',
+    Encounter: 'encounter',
+    Revisit: 'revisit',
+}
 
 const newEncounter = {
     Habitable: `Habitable Body`,
@@ -18,16 +37,34 @@ const newEncounter = {
 }
 
 const discoverAction = {
+    header: `You have discovered `,
+    descriptor: {
+        Homeworld: `your homeworld`,
+        Habitable: `a habitable location`,
+        Uninhabitable: `an uninhabitable location`,
+        Inhabited: `an inhabited location (station or craft)`,
+        Uninhabited: `an uninhabited location (station or craft)`,
+        NaturalLocation: `a Belt, Field, or Nebula`,
+        Anomaly: `an Anomaly`,
+    },
     start: `Starting with the player to the `,
+    direction: {
+        Homeworld: `right`,
+        Habitable: `left`,
+        Uninhabitable: `right`,
+        Inhabited: `left`,
+        Uninhabited: `right`,
+        NaturalLocation: `left`,
+        Anomaly: `left`,
+    },
     end: ` of the GM, go around in a circle and each define one of its traits.`,
-    Homeworld: `right`,
-    Habitable: `left`,
-    Uninhabitable: `right`,
-    Inhabited: `left`,
-    Uninhabited: `right`,
-    NaturalLocation: `left`,
-    Anomaly: `left`,
-    finalStep: `Name and encounter this location.`
+
+
+    finalStep: `Then name this location`,
+    encounter: {
+        rootURL: '/explore/encounter/',
+        title: 'Click to encounter this location'
+    },
 }
 
 const encounterAction = {
@@ -101,7 +138,11 @@ const encounterAction = {
             "What esoteric principle is being warped?",
         ]
     },
-    finalStep: `Name and encounter this location.`
+    finalStep: ``,
+    encounter: {
+        target: 'mark',
+        title: 'Click to Leave A Mark on this location'
+    },
 }
 
 const returnAction = {
@@ -182,6 +223,9 @@ export {
     directionOptions,
     selectDestination,
     clickToTravel,
+    nextStep,
+    discoverHomeworld,
+    locationOptions,
     newEncounter,
     discoverAction,
     encounterAction,

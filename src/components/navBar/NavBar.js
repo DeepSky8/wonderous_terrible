@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const NavBar = ({ navArray }) => {
+const NavBar = ({ rootURL, navArray }) => {
 
     return (
         <div className="nav-center-container">
@@ -11,7 +11,7 @@ const NavBar = ({ navArray }) => {
                     return (
                         <NavLink
                             key={key}
-                            to={`${key}`}
+                            to={`${rootURL}${key}`}
                             className={({ isActive }) =>
                             (
                                 isActive
