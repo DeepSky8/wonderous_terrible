@@ -1,0 +1,33 @@
+.revisitSelector-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: $xs-size 0;
+    text-align: center;
+
+    a {
+        @include border;
+        text-align: center;
+        padding: $s-size 0;
+        margin: $xs-size 0;
+
+        text-decoration: none;
+        width: 100%;
+    }
+
+    a:hover {
+        color: $orange-tan;
+        @include box-shadow-orange;
+    }
+}
+
+@media only screen and (min-device-width: $desktop-breakpoint) {
+    .revisitSelector-container {
+        justify-content: space-evenly;
+
+        a {
+            width: 47%;
+            vertical-align: center;
+        }
+    }
+}

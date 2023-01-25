@@ -10,12 +10,11 @@ import PickDirection from "../components/exploreSpace/PickDirection";
 import DiscoverLocation from "../components/exploreSpace/discover/DiscoverLocation";
 import EncounterLocation from "../components/exploreSpace/encounter/EncounterLocation";
 import SpeciesDisplay from "../components/newSpecies/SpeciesDisplay";
-import DiscoverInstructions from "../components/exploreSpace/discover/DiscoverInstructions";
-import EncounterInstructions from "../components/exploreSpace/encounter/EncounterInstructions";
 import ExploreUndefined from "../components/exploreSpace/ExploreUndefined";
 import MarkDisplay from "../components/mark/MarkDisplay";
-import MarkInstructions from "../components/mark/MarkInstructions";
 import MarkSelector from "../components/mark/MarkSelector";
+import RevisitLocation from "../components/exploreSpace/revisit/RevisitLocation";
+import RevisitSelector from "../components/exploreSpace/revisit/RevisitSelector";
 
 const AppRouter = createBrowserRouter([
     {
@@ -53,6 +52,14 @@ const AppRouter = createBrowserRouter([
                     {
                         path: "encounter/:location",
                         element: <EncounterLocation />,
+                    },
+                    {
+                        path: "revisit/",
+                        element: <RevisitSelector />,
+                    },
+                    {
+                        path: "revisit/:location",
+                        element: <RevisitLocation />,
                     },
                     {
                         path: "undefined",

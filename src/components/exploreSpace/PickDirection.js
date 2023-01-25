@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import newDestination from "../../functions/newDestination";
+import randomDigit from "../../functions/randomDigit";
 import {
     clickToTravel,
     directionOptions,
@@ -9,11 +11,20 @@ import NextBar from "../navBar/NextBar";
 const PickDirection = () => {
     const directionArray = Object.entries(directionOptions)
     const [direction, setDirection] = useState('')
-    const [value, setValue] = useState('')
+    const [value, setValue] = useState({ rootURL: 'discover/' })
+
+    useEffect(() => {
+        setDirection(newDestination(randomDigit()))
+    }, [])
 
     const click = (key) => {
-        setDirection(key)
         setValue(directionOptions[key])
+        if (key === 'discover') {
+            setDirection(newDestination(randomDigit()))
+        } else {
+            setDirection(key)
+        }
+
     }
 
     return (
@@ -33,31 +44,16 @@ const PickDirection = () => {
             <NextBar
                 goTo={value.rootURL + direction}
                 linkText={
-                    direction.length > 0
+                    value.length > 0
                         ?
                         clickToTravel
                         :
                         selectDestination
                 }
-                active={direction.length > 0}
+                active={value.length > 0}
             />
         </div>
     )
 }
 
 export default PickDirection
-
-// next={
-//     {
-//         rootURL: value.rootURL,
-//         target: value.target,
-//         title:
-//             direction.length > 0
-//                 ?
-//                 clickToTravel
-//                 :
-//                 selectDestination
-//         ,
-//         active: direction.length > 0
-//     }
-// }

@@ -13,7 +13,7 @@ const directionOptions = {
     revisit: {
         title: 'Revisit',
         description: "You've chosen to return to a previously-visited location",
-        rootURL: '/explore/revisit',
+        rootURL: '/explore/',
     }
 }
 
@@ -59,7 +59,7 @@ const discoverAction = {
         naturalLocation: `left`,
         anomaly: `left`,
     },
-    end: ` of the GM, go around in a circle and each define one of its traits.`,
+    end: ` of the GM, go around in a circle and each define one of its traits`,
 
 
     finalStep: `Then name this location`,
@@ -82,7 +82,7 @@ const encounterAction = {
     },
     promptGM1: ``,
     promptPlayers: `Players, choose one of the following prompts:`,
-    promptGM2: `GM, answer and provide a situation.`,
+    promptGM2: `GM, answer the prompt and provide a situation`,
     homeworld: [
         "What threatens this place?",
         "What resources does it need?",
@@ -119,85 +119,78 @@ const encounterAction = {
         "What esoteric principle is being warped?",
     ],
 
-    finalStep: ``,
+    finalStep: `When the situation is considered resolved, Leave A Mark`,
     mark: {
         rootURL: '/mark/',
         title: 'Next: Leave A Mark'
     },
 }
 
+const revisitOptions = {
+    homeworld: `Homeworld`,
+    habitable: `A habitable body / location`,
+    uninhabitable: `An uninhabitable body / location`,
+    inhabited: `An inhabited location (station or craft)`,
+    uninhabited: `An uninhabited location (station or craft)`,
+    naturalLocation: `A Belt, Field, or Nebula`,
+    anomaly: `An Anomaly`,
+}
+
 const returnAction = {
-    homeworld: {
-        promptGM1: `The GM describes how the location has changed since the last visit.`,
-        promptPlayers: `Players choose from the following prompts:`,
-        promptGM2: `The GM answers the prompt, and provides a situation.`,
-        options: [
-            "Who is assuming control?",
-            "What cultural shift has occurred?",
-            "What new disaster looms?"
-        ]
+    selectorInstruction: `Which type of location are you revisiting?`,
+    header: `You are revisiting `,
+    descriptor: {
+        homeworld: `your homeworld`,
+        habitable: `a habitable body / location`,
+        uninhabitable: `an uninhabitable body / location`,
+        inhabited: `an inhabited location (station or craft)`,
+        uninhabited: `an uninhabited location (station or craft)`,
+        naturalLocation: `a Belt, Field, or Nebula`,
+        anomaly: `an Anomaly`,
     },
-    habitable: {
-        promptGM1: `The GM describes how the location has changed since the last visit.`,
-        promptPlayers: `Players choose from the following prompts:`,
-        promptGM2: `The GM answers the prompt, and provides a situation.`,
-        options: [
-            "What new lifeform has been discovered?",
-            "What craves control of this place?",
-            "What culture is burgeoning?"
-        ]
+    promptGM1: `The GM describes how the location has changed since the last visit`,
+    promptPlayers: `Players choose from the following prompts:`,
+    promptGM2: `GM, answer the prompt and provide a situation`,
+    homeworld: [
+        "Who is assuming control?",
+        "What cultural shift has occurred?",
+        "What new disaster looms?"
+    ],
+    habitable: [
+        "What new lifeform has been discovered?",
+        "What craves control of this place?",
+        "What culture is burgeoning?"
+    ],
+    uninhabitable: [
+        "What has shifted in the uninhabitable body's composition?",
+        "What is trying to prevent the uninhabitable body from changing?",
+        "What is trying to change the uninhabitable body?"
+    ],
+    inhabited: [
+        "What is needed?",
+        "Who else is involved?",
+        "What history has been uncovered?"
+    ],
+    uninhabited: [
+        "Who has moved in?",
+        "What has drawn near?",
+        "What object or site was discovered nearby?"
+    ],
+    naturalLocation: [
+        "How can we improve things?",
+        "What is there left to exploit?",
+        "Who else has been here?"
+    ],
+    anomaly: [
+        "How can I mitigate the consequences?",
+        "Where is it spreading?",
+        "Who else is affected?"
+    ],
+    finalStep: `Update the location, then Leave A Mark`,
+    mark: {
+        rootURL: '/mark/',
+        title: 'Next: Leave A Mark'
     },
-    uninhabitable: {
-        promptGM1: `The GM describes how the location has changed since the last visit.`,
-        promptPlayers: `Players choose from the following prompts:`,
-        promptGM2: `The GM answers the prompt, and provides a situation.`,
-        options: [
-            "What has shifted in the body's composition?",
-            "What is trying to prevent the body from changing?",
-            "What is trying to change the body?"
-        ]
-    },
-    inhabited: {
-        promptGM1: `The GM describes how the location has changed since the last visit.`,
-        promptPlayers: `Players choose from the following prompts:`,
-        promptGM2: `The GM answers the prompt, and provides a situation.`,
-        options: [
-            "What is needed?",
-            "Who else is involved?",
-            "What history has been uncovered?"
-        ]
-    },
-    uninhabited: {
-        promptGM1: `The GM describes how the location has changed since the last visit.`,
-        promptPlayers: `Players choose from the following prompts:`,
-        promptGM2: `The GM answers the prompt, and provides a situation.`,
-        options: [
-            "Who has moved in?",
-            "What has drawn near?",
-            "What object or site was discovered nearby?"
-        ]
-    },
-    naturalLocation: {
-        promptGM1: `The GM describes how the location has changed since the last visit.`,
-        promptPlayers: `Players choose from the following prompts:`,
-        promptGM2: `The GM answers the prompt, and provides a situation.`,
-        options: [
-            "How can we improve things?",
-            "What is there left to exploit?",
-            "Who else has been here?"
-        ]
-    },
-    anomaly: {
-        promptGM1: `The GM describes how the location has changed since the last visit.`,
-        promptPlayers: `Players choose from the following prompts:`,
-        promptGM2: `The GM answers the prompt, and provides a situation.`,
-        options: [
-            "How can I mitigate the consequences?",
-            "Where is it spreading?",
-            "Who else is affected?"
-        ]
-    },
-    finalStep: `Update the location, then Leave A Mark.`
 }
 
 export {
@@ -210,5 +203,6 @@ export {
     newEncounter,
     discoverAction,
     encounterAction,
+    revisitOptions,
     returnAction
 }
