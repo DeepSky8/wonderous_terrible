@@ -1,17 +1,19 @@
 
 const directionOptions = {
-    Homeworld: {
+    homeworld: {
+        title: 'Homeworld',
         description: "You've chosen to return to your Homeworld",
         rootURL: '/explore/encounter/',
-        target: 'Homeworld'
     },
-    Discover: {
+    discover: {
+        title: 'Discover',
         description: "You've selected a promising target to visit for the first time",
-        target: 'discover',
+        rootURL: '/explore/discover/',
     },
-    Revisit: {
+    revisit: {
+        title: 'Revisit',
         description: "You've chosen to return to a previously-visited location",
-        target: 'revisit',
+        rootURL: '/explore/revisit',
     }
 }
 
@@ -22,40 +24,40 @@ const discoverHomeworld = 'Discover your Homeworld'
 
 
 const locationOptions = {
-    Discover: 'discover',
-    Encounter: 'encounter',
-    Revisit: 'revisit',
+    discover: 'Discover',
+    encounter: 'Encounter',
+    revisit: 'Revisit',
 }
 
 const newEncounter = {
-    Habitable: `Habitable Body`,
-    Uninhabitable: `Uninhabitable Body`,
-    Inhabited: `Station Or Craft, Inhabited`,
-    Uninhabited: `Station Or Craft, Uninhabited`,
-    NaturalLocation: `Belt, Field, Or Nebula`,
-    Anomaly: `Anomaly`,
+    habitable: `Habitable Body`,
+    uninhabitable: `Uninhabitable Body`,
+    inhabited: `Station Or Craft, Inhabited`,
+    uninhabited: `Station Or Craft, Uninhabited`,
+    naturalLocation: `Belt, Field, Or Nebula`,
+    anomaly: `Anomaly`,
 }
 
 const discoverAction = {
     header: `You have discovered `,
     descriptor: {
-        Homeworld: `your homeworld`,
-        Habitable: `a habitable location`,
-        Uninhabitable: `an uninhabitable location`,
-        Inhabited: `an inhabited location (station or craft)`,
-        Uninhabited: `an uninhabited location (station or craft)`,
-        NaturalLocation: `a Belt, Field, or Nebula`,
-        Anomaly: `an Anomaly`,
+        homeworld: `your homeworld`,
+        habitable: `a habitable location`,
+        uninhabitable: `an uninhabitable location`,
+        inhabited: `an inhabited location (station or craft)`,
+        uninhabited: `an uninhabited location (station or craft)`,
+        naturalLocation: `a Belt, Field, or Nebula`,
+        anomaly: `an Anomaly`,
     },
     start: `Starting with the player to the `,
     direction: {
         Homeworld: `right`,
-        Habitable: `left`,
-        Uninhabitable: `right`,
-        Inhabited: `left`,
-        Uninhabited: `right`,
-        NaturalLocation: `left`,
-        Anomaly: `left`,
+        habitable: `left`,
+        uninhabitable: `right`,
+        inhabited: `left`,
+        uninhabited: `right`,
+        naturalLocation: `left`,
+        anomaly: `left`,
     },
     end: ` of the GM, go around in a circle and each define one of its traits.`,
 
@@ -68,85 +70,64 @@ const discoverAction = {
 }
 
 const encounterAction = {
-    Homeworld: {
-        promptGM1: ``,
-        promptPlayers: `Players choose one of the following prompts:`,
-        promptGM2: `The GM then answers, and provides them with a situation.`,
-        options: [
-            "What threatens this place?",
-            "What resources does it need?",
-            "What question troubles it?",
-        ]
+    header: `You are encountering `,
+    descriptor: {
+        homeworld: `your homeworld`,
+        habitable: `a habitable location`,
+        uninhabitable: `an uninhabitable location`,
+        inhabited: `an inhabited location (station or craft)`,
+        uninhabited: `an uninhabited location (station or craft)`,
+        naturalLocation: `a Belt, Field, or Nebula`,
+        anomaly: `an Anomaly`,
     },
-    Habitable: {
-        promptGM1: ``,
-        promptPlayers: `Players choose one of the following prompts:`,
-        promptGM2: `The GM then answers, and provides them with a situation.`,
-        options: [
-            "Wwhat flourishes here?",
-            "What zone is best for colonization?",
-            "Who else has staked a claim?"
-        ]
-    },
-    Uninhabitable: {
-        promptGM1: ``,
-        promptPlayers: `Players choose one of the following prompts:`,
-        promptGM1: `The GM then answers, and provides them with a situation.`,
-        options: [
-            "What rendered this place unsuitable to life?",
-            "What used to live here?",
-            "What resources can we exploit?",
-        ]
-    },
-    Inhabited: {
-        promptGM1: ``,
-        promptPlayers: `Players choose one of the following prompts:`,
-        promptGM2: `The GM then answers, and provides them with a situation.`,
-        options: [
-            "What do the want?",
-            "Where are they from?",
-            "Where are they going?",
-        ]
-    },
-    Uninhabited: {
-        promptGM1: ``,
-        promptPlayers: `Players choose one of the following prompts:`,
-        promptGM2: `The GM then answers, and provides them with a situation.`,
-        options: [
-            "Why did they leave?",
-            "What is left to find?",
-            "Where were they going?",
-        ]
-    },
-    NaturalLocation: {
-        promptGM1: ``,
-        promptPlayers: `Players choose one of the following prompts:`,
-        promptGM2: `The GM then answers, and provides them with a situation.`,
-        options: [
-            "What happened here?",
-            "What lives here?",
-            "What can be found here?",
-        ]
-    },
-    Anomaly: {
-        promptGM1: ``,
-        promptPlayers: `Players choose one of the following prompts:`,
-        promptGM2: `The GM then answers, and provides them with a situation.`,
-        options: [
-            "What physics principle is being warped?",
-            "What biological principle is being warped?",
-            "What esoteric principle is being warped?",
-        ]
-    },
+    promptGM1: ``,
+    promptPlayers: `Players, choose one of the following prompts:`,
+    promptGM2: `GM, answer and provide a situation.`,
+    homeworld: [
+        "What threatens this place?",
+        "What resources does it need?",
+        "What question troubles it?",
+    ],
+    habitable: [
+        "Wwhat flourishes here?",
+        "What zone is best for colonization?",
+        "Who else has staked a claim?"
+    ],
+    uninhabitable: [
+        "What rendered this place unsuitable to life?",
+        "What used to live here?",
+        "What resources can we exploit?",
+    ],
+    inhabited: [
+        "What do the want?",
+        "Where are they from?",
+        "Where are they going?",
+    ],
+    uninhabited: [
+        "Why did they leave?",
+        "What is left to find?",
+        "Where were they going?",
+    ],
+    naturalLocation: [
+        "What happened here?",
+        "What lives here?",
+        "What can be found here?",
+    ],
+    anomaly: [
+        "What physics principle is being warped?",
+        "What biological principle is being warped?",
+        "What esoteric principle is being warped?",
+    ],
+
     finalStep: ``,
-    encounter: {
-        target: 'mark',
-        title: 'Click to Leave A Mark on this location'
+    mark: {
+        rootURL: '/mark/',
+        title: 'Next: Leave A Mark'
     },
 }
 
 const returnAction = {
-    Homeworld: {
+    homeworld: {
         promptGM1: `The GM describes how the location has changed since the last visit.`,
         promptPlayers: `Players choose from the following prompts:`,
         promptGM2: `The GM answers the prompt, and provides a situation.`,
@@ -156,7 +137,7 @@ const returnAction = {
             "What new disaster looms?"
         ]
     },
-    Habitable: {
+    habitable: {
         promptGM1: `The GM describes how the location has changed since the last visit.`,
         promptPlayers: `Players choose from the following prompts:`,
         promptGM2: `The GM answers the prompt, and provides a situation.`,
@@ -166,7 +147,7 @@ const returnAction = {
             "What culture is burgeoning?"
         ]
     },
-    Uninhabitable: {
+    uninhabitable: {
         promptGM1: `The GM describes how the location has changed since the last visit.`,
         promptPlayers: `Players choose from the following prompts:`,
         promptGM2: `The GM answers the prompt, and provides a situation.`,
@@ -176,7 +157,7 @@ const returnAction = {
             "What is trying to change the body?"
         ]
     },
-    Inhabited: {
+    inhabited: {
         promptGM1: `The GM describes how the location has changed since the last visit.`,
         promptPlayers: `Players choose from the following prompts:`,
         promptGM2: `The GM answers the prompt, and provides a situation.`,
@@ -186,7 +167,7 @@ const returnAction = {
             "What history has been uncovered?"
         ]
     },
-    Uninhabited: {
+    uninhabited: {
         promptGM1: `The GM describes how the location has changed since the last visit.`,
         promptPlayers: `Players choose from the following prompts:`,
         promptGM2: `The GM answers the prompt, and provides a situation.`,
@@ -196,7 +177,7 @@ const returnAction = {
             "What object or site was discovered nearby?"
         ]
     },
-    NaturalLocation: {
+    naturalLocation: {
         promptGM1: `The GM describes how the location has changed since the last visit.`,
         promptPlayers: `Players choose from the following prompts:`,
         promptGM2: `The GM answers the prompt, and provides a situation.`,
@@ -206,7 +187,7 @@ const returnAction = {
             "Who else has been here?"
         ]
     },
-    Anomaly: {
+    anomaly: {
         promptGM1: `The GM describes how the location has changed since the last visit.`,
         promptPlayers: `Players choose from the following prompts:`,
         promptGM2: `The GM answers the prompt, and provides a situation.`,

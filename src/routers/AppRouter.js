@@ -12,6 +12,10 @@ import EncounterLocation from "../components/exploreSpace/encounter/EncounterLoc
 import SpeciesDisplay from "../components/newSpecies/SpeciesDisplay";
 import DiscoverInstructions from "../components/exploreSpace/discover/DiscoverInstructions";
 import EncounterInstructions from "../components/exploreSpace/encounter/EncounterInstructions";
+import ExploreUndefined from "../components/exploreSpace/ExploreUndefined";
+import MarkDisplay from "../components/mark/MarkDisplay";
+import MarkInstructions from "../components/mark/MarkInstructions";
+import MarkSelector from "../components/mark/MarkSelector";
 
 const AppRouter = createBrowserRouter([
     {
@@ -43,27 +47,28 @@ const AppRouter = createBrowserRouter([
                         element: <PickDirection />
                     },
                     {
-                        path: "discover",
+                        path: "discover/:location",
                         element: <DiscoverLocation />,
-                        children: [
-                            {
-                                path: ':location',
-                                element: <DiscoverInstructions />
-                            }
-                        ]
                     },
                     {
-                        path: "encounter",
+                        path: "encounter/:location",
                         element: <EncounterLocation />,
-                        children: [
-                            {
-                                path: ':location',
-                                element: <EncounterInstructions />
-                            }
-                        ]
-
                     },
+                    {
+                        path: "undefined",
+                        element: <ExploreUndefined />
+
+                    }
                 ]
+            },
+
+            {
+                path: "mark/",
+                element: <MarkSelector />,
+            },
+            {
+                path: "mark/:markType",
+                element: <MarkDisplay />,
             },
             {
                 path: "/fullAttribution",

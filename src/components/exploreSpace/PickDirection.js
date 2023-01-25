@@ -25,30 +25,39 @@ const PickDirection = () => {
                         <button
                             key={key}
                             onClick={() => { click(key) }}
-                        >{key}</button>
+                        >{value.title}</button>
                     )
                 })}
             </div>
             <p className="directionValue">{value.description}</p>
             <NextBar
-
-                next={
-                    {
-                        rootURL: value.rootURL,
-                        target: value.target,
-                        title:
-                            direction.length > 0
-                                ?
-                                clickToTravel
-                                :
-                                selectDestination
-                        ,
-                        active: direction.length > 0
-                    }
+                goTo={value.rootURL + direction}
+                linkText={
+                    direction.length > 0
+                        ?
+                        clickToTravel
+                        :
+                        selectDestination
                 }
+                active={direction.length > 0}
             />
         </div>
     )
 }
 
 export default PickDirection
+
+// next={
+//     {
+//         rootURL: value.rootURL,
+//         target: value.target,
+//         title:
+//             direction.length > 0
+//                 ?
+//                 clickToTravel
+//                 :
+//                 selectDestination
+//         ,
+//         active: direction.length > 0
+//     }
+// }

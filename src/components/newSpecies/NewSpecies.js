@@ -15,10 +15,10 @@ const NewSpecies = () => {
         indexNow + 1 >= navArray.length
             ?
             {
-                rootURL: '/explore/Discover/',
-                target: 'Homeworld',
+                rootURL: '/explore/discover/',
+                target: 'homeworld',
                 title: nextStep + discoverHomeworld,
-                active: true,
+                active: false,
             }
             :
             {
@@ -41,7 +41,10 @@ const NewSpecies = () => {
             <Outlet />
 
             <NextBar
-                next={next}
+                goTo={next.rootURL + next.target}
+                linkText={next.title}
+                active={next.active}
+
             />
 
 

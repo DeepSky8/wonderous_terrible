@@ -1,8 +1,11 @@
 .newContinue-container {
     display: flex;
     justify-content: center;
-    margin-top: $m-size;
-    margin-bottom: $m-size;
+    margin-top: $s-size;
+    margin-bottom: $s-size;
+    // border-bottom: 1px;
+    // @include border-blue;
+    // @include border;
 
     .newContinue-link {
         text-align: center;
@@ -15,6 +18,10 @@
         padding: $xs-size;
         // outline: auto;
         @include border;
+    }
+
+    a:hover {
+        @include box-shadow-orange;
     }
 
     a:visited {

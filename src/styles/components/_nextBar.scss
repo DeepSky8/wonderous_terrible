@@ -24,6 +24,11 @@
             padding: $s-size;
             margin: $s-size;
         }
+
+        a:hover {
+            color: $orange-tan;
+            @include box-shadow-orange;
+        }
     }
 }
 
