@@ -15,6 +15,9 @@ import MarkDisplay from "../components/mark/MarkDisplay";
 import MarkSelector from "../components/mark/MarkSelector";
 import RevisitLocation from "../components/exploreSpace/revisit/RevisitLocation";
 import RevisitSelector from "../components/exploreSpace/revisit/RevisitSelector";
+import Hyperdrive from "../components/hyperdrive/Hyperdrive";
+import HyperdriveSelector from "../components/hyperdrive/HyperdriveSelector";
+import HyperdriveChallenge from "../components/hyperdrive/HyperdriveChallenge";
 
 const AppRouter = createBrowserRouter([
     {
@@ -76,6 +79,18 @@ const AppRouter = createBrowserRouter([
             {
                 path: "mark/:markType",
                 element: <MarkDisplay />,
+            },
+            {
+                path: "hyperdrive/:timeline",
+                element: <Hyperdrive />
+            },
+            {
+                path: "hyperdrive/:change/:timeline",
+                element: <HyperdriveSelector />
+            },
+            {
+                path: "hyperdrive/:change/:challenge/:timeline",
+                element: <HyperdriveChallenge />
             },
             {
                 path: "/fullAttribution",

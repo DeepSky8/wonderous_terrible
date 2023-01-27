@@ -10,17 +10,19 @@ import NextBar from "../navBar/NextBar";
 
 const PickDirection = () => {
     const directionArray = Object.entries(directionOptions)
-    const [direction, setDirection] = useState('')
+    const [direction, setDirection] = useState(newDestination(randomDigit()))
     const [value, setValue] = useState({ rootURL: 'discover/' })
+    const [picked, setPicked] = useState(false)
 
-    useEffect(() => {
-        setDirection(newDestination(randomDigit()))
-    }, [])
+    // useEffect(() => {
+    //     setDirection(newDestination(randomDigit()))
+    // }, [])
 
     const click = (key) => {
+        setPicked(true)
         setValue(directionOptions[key])
         if (key === 'discover') {
-            setDirection(newDestination(randomDigit()))
+            setDirection(newDestination(randomDigit(6, 0)))
         } else {
             setDirection(key)
         }
@@ -44,13 +46,13 @@ const PickDirection = () => {
             <NextBar
                 goTo={value.rootURL + direction}
                 linkText={
-                    value.length > 0
+                    picked
                         ?
                         clickToTravel
                         :
                         selectDestination
                 }
-                active={value.length > 0}
+                active={picked}
             />
         </div>
     )
