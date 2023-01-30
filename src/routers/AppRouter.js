@@ -1,5 +1,5 @@
 import React from "react";
-import { createBrowserRouter, redirect } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import Home from "../components/Home";
 import Introduction from "../components/introduction/Introduction";
 import NewSpecies from "../components/newSpecies/NewSpecies";
@@ -27,11 +27,13 @@ const AppRouter = createBrowserRouter([
         children: [
             {
                 index: true,
+                errorElement: <ExploreUndefined />,
                 element: <Introduction />,
             },
             {
                 path: "/newSpecies",
                 element: <NewSpecies />,
+                errorElement: <ExploreUndefined />,
                 children: [
                     {
                         path: ':step',
@@ -43,6 +45,7 @@ const AppRouter = createBrowserRouter([
             {
                 path: "/explore/*",
                 element: <ExploreSpace />,
+                errorElement: <ExploreUndefined />,
                 children: [
                     {
                         index: true,
@@ -75,26 +78,32 @@ const AppRouter = createBrowserRouter([
             {
                 path: "mark/",
                 element: <MarkSelector />,
+                errorElement: <ExploreUndefined />,
             },
             {
                 path: "mark/:markType",
                 element: <MarkDisplay />,
+                errorElement: <ExploreUndefined />,
             },
             {
                 path: "hyperdrive/:timeline",
-                element: <Hyperdrive />
+                element: <Hyperdrive />,
+                errorElement: <ExploreUndefined />,
             },
             {
                 path: "hyperdrive/:change/:timeline",
-                element: <HyperdriveSelector />
+                element: <HyperdriveSelector />,
+                errorElement: <ExploreUndefined />,
             },
             {
                 path: "hyperdrive/:change/:challenge/:timeline",
-                element: <HyperdriveChallenge />
+                element: <HyperdriveChallenge />,
+                errorElement: <ExploreUndefined />,
             },
             {
                 path: "/fullAttribution",
-                element: <FullAttribution />
+                element: <FullAttribution />,
+                errorElement: <ExploreUndefined />,
             }
         ]
     }

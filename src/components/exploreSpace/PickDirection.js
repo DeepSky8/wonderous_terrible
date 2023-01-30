@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import newDestination from "../../functions/newDestination";
 import randomDigit from "../../functions/randomDigit";
 import {
@@ -10,13 +10,9 @@ import NextBar from "../navBar/NextBar";
 
 const PickDirection = () => {
     const directionArray = Object.entries(directionOptions)
-    const [direction, setDirection] = useState(newDestination(randomDigit()))
+    const [direction, setDirection] = useState(newDestination(randomDigit(6, 0)))
     const [value, setValue] = useState({ rootURL: 'discover/' })
     const [picked, setPicked] = useState(false)
-
-    // useEffect(() => {
-    //     setDirection(newDestination(randomDigit()))
-    // }, [])
 
     const click = (key) => {
         setPicked(true)

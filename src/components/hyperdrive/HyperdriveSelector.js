@@ -4,9 +4,7 @@ import strung from "../../functions/strung";
 import {
     hyperdriveBody,
     hyperdriveHeader,
-    hyperdriveInstructions,
     hyperdriveRollThrow,
-    hyperdriveTitle
 } from "../../objects/hyperdriveObjects";
 import NextBar from "../navBar/NextBar";
 
@@ -18,12 +16,20 @@ const HyperdriveSelector = () => {
     return (
         <div className="hyperdriveDisplay-container">
 
+
             <div className="header-container">
-                <Link
-                    className="backLink"
-                    to={'/hyperdrive/' + timeline}
-                >←</Link>
-                <h3>{hyperdriveHeader[change]}</h3>
+                <div className="leftBlock">
+                    <div className="leftTop"></div>
+                    <div className='backLink'><Link to={'/hyperdrive/' + timeline}>←</Link></div>
+                    <div className="leftBottom"></div>
+                </div>
+                <div className="centerBlock">
+                    <h3>{hyperdriveHeader[change]}</h3>
+
+                </div>
+                <div className="rightBlock">
+
+                </div>
             </div>
 
             <p className="bodyText">{hyperdriveBody[change]}</p>

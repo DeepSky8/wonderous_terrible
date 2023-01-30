@@ -3,6 +3,7 @@
     justify-content: center;
     text-align: center;
     width: fill;
+    font-size: $calcFontSizeLarge;
 
     a {
         @include border;
@@ -15,6 +16,7 @@
 
     a:hover {
         color: $orange-tan;
+        @include box-shadow-orange;
     }
 
     @media only screen and (min-device-width: $desktop-breakpoint) {
@@ -37,6 +39,7 @@
     justify-content: center;
     text-align: center;
     width: fill;
+    font-size: $calcFontSizeLarge;
 
     a {
         @include border;

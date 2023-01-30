@@ -16,8 +16,3 @@ const MarkIntroduction = () => {
 }
 
 export default MarkIntroduction
-
-// <p>
-// <span>{leaveMarkIntroduction}</span>
-// <span className="italic">{leaveMarkReminder}</span>
-// </p>

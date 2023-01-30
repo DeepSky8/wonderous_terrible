@@ -1,32 +1,41 @@
 .markDisplay-container {
-    .header-container {
-        display: flex;
-        flex-wrap: row wrap;
-    }
+    // .header-container {
+    //     display: flex;
+    //     flex-wrap: row wrap;
+    // }
 
-    h3 {
-        // margin: $s-size 0;
-        // padding: $s-size 0;
-        text-align: center;
-        width: 85%;
-    }
+    // h3 {
+    //     // margin: $s-size 0;
+    //     // padding: $s-size 0;
+    //     text-align: center;
+    //     // width: 85%;
+    //     width: 50%;
+    //     font-size: $calcFontSizeLarge;
+    // }
 
-    .backLink {
-        width: 15%;
-        text-align: center;
-        margin: $s-size $xs-size 0 0;
-        // padding: $xs-size;
-        font-size: xx-large;
-    }
+    // .backLink {
+    //     width: 25%;
+    //     text-align: center;
 
-    .backLink:hover {
-        @include outline;
-        @include outline-orange;
-         // @include border;
-            // @include border-orange;
-            // @include box-shadow-orange;
-;
-    }
+    //     // margin: $s-size $xs-size 0 0;
+    //     // padding: $xs-size;
+    //     font-size: $calcFontSizeLarge;
+
+    // }
+
+    // .backLink:hover {
+    //     @include outline;
+    //     @include outline-orange;
+    //     // @include border;
+    //     // @include border-orange;
+    //     // @include box-shadow-orange;
+    // }
+
+    // .headerSpacer {
+    //     width: 25%;
+    // }
+
+
 
     .bodyText {
         margin-top: 0;
@@ -52,7 +61,7 @@
         .backLink {
             width: 30%;
             text-align: center;
-            margin: $m-size 0 ;
+            margin: $m-size 0;
             padding: $xs-size 0;
         }
 

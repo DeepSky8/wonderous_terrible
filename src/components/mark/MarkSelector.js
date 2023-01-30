@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import { leaveMarkHeader } from "../../objects/markObjects";
 import MarkIntroduction from "./MarkIntroduction";
 
@@ -26,5 +25,3 @@ const MarkSelector = () => {
     )
 }
 export default MarkSelector;
-
-// className="mark-container"

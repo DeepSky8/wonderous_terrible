@@ -9,10 +9,20 @@ const MarkDisplay = () => {
 
     return (
         <div className="markDisplay-container">
-            <span className="header-container">
-                <Link className='backLink' to='/mark'>←</Link>
-                <h3>{leaveMarkHeader[markType]}</h3>
-            </span>
+            <div className="header-container">
+                <div className="leftBlock">
+                    <div className="leftTop"></div>
+                    <div className='backLink'><Link to='/mark'>←</Link></div>
+                    <div className="leftBottom"></div>
+                </div>
+                <div className="centerBlock">
+                    <h3>{leaveMarkHeader[markType]}</h3>
+
+                </div>
+                <div className="rightBlock">
+
+                </div>
+            </div>
 
             <p className="bodyText">{leaveMarkBody[markType]}</p>
             <p className="bodyTest">{leaveMarkFooter[markType]}</p>

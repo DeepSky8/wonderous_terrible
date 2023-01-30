@@ -4,13 +4,10 @@ import randomDigit from "../../functions/randomDigit";
 import strung from "../../functions/strung";
 import {
     hyperdriveDistance,
-    hyperdriveHeader,
-    hyperdriveInstructions,
     hyperdriveProcess,
     hyperdriveRoll,
     hyperdriveRollThrow,
     hyperdriveTable,
-    hyperdriveTitle
 } from "../../objects/hyperdriveObjects";
 import NextBar from "../navBar/NextBar";
 
@@ -19,7 +16,6 @@ const Hyperdrive = () => {
     const backLink = strung(timeline.split('['), '/')
     const [rollNumber, setRollNumber] = useState(0)
     const [rollResult, setRollResult] = useState('')
-    // const hyperArray = Object.entries(hyperdriveHeader)
 
     const hyperDie = () => {
         if (rollResult.length === 0) {
@@ -40,13 +36,23 @@ const Hyperdrive = () => {
 
     return (
         <div className="hyperdriveDisplay-container">
+
+
             <div className="header-container">
-                <Link
-                    className="backLink"
-                    to={'/hyperdrive/' + change + '/' + timeline}
-                >←</Link>
-                <h3>{hyperdriveRollThrow[challenge]}</h3>
+                <div className="leftBlock">
+                    <div className="leftTop"></div>
+                    <div className='backLink'><Link to={'/hyperdrive/' + change + '/' + timeline}>←</Link></div>
+                    <div className="leftBottom"></div>
+                </div>
+                <div className="centerBlock">
+                    <h3>{hyperdriveRollThrow[challenge]}</h3>
+
+                </div>
+                <div className="rightBlock">
+
+                </div>
             </div>
+
 
             {
                 challenge === 'bowlThrow' &&

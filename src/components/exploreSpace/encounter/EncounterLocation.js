@@ -1,5 +1,5 @@
 import React from "react";
-import { encounterAction } from "../../../objects/encounterObjects";
+import { encounterAction, nextStep } from "../../../objects/encounterObjects";
 import NextBar from "../../navBar/NextBar";
 import EncounterInstructions from "./EncounterInstructions";
 
@@ -9,7 +9,7 @@ const EncounterLocation = () => {
             <EncounterInstructions />
             <NextBar
                 goTo={encounterAction.mark.rootURL}
-                linkText={encounterAction.mark.title}
+                linkText={nextStep + encounterAction.mark.title}
             />
         </div>
     )

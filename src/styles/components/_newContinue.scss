@@ -1,8 +1,9 @@
 .newContinue-container {
     display: flex;
-    justify-content: center;
-    margin-top: $s-size;
-    margin-bottom: $s-size;
+    justify-content: space-around;
+    margin: $m-size 0;
+    padding: $m-size 0;
+    font-size: $calcFontSizeLarge;
 
     .newContinue-link {
         text-align: center;
@@ -11,10 +12,10 @@
     }
 
     a {
-        margin: 0;
-        padding: 0;
+        margin: $s-size;
+        padding: $m-size;
         text-align: center;
-        // @include border;
+        @include border;
     }
 
     // a:hover {
@@ -25,35 +26,30 @@
     //     @include border;
     // }
 
+    // @media only screen and (min-device-width: $tiny-breakpoint) {
+    //     a {
+    //         margin: $xs-size;
+    //         padding: $xs-size;
+    //         @include border;
+    //     }
 
+    //     a:hover {
+    //         @include box-shadow-orange;
+    //     }
 
-    @media only screen and (min-device-width: $tiny-breakpoint) {
-        a {
-            margin: $xs-size;
-            padding: $xs-size;
-            @include border;
-        }
-    
-        a:hover {
-            @include box-shadow-orange;
-        }
-    
-        a:visited {
-            @include border;
-        }
+    //     a:visited {
+    //         @include border;
+    //     }
 
-        .newContinue-link {
-            text-align: center;
-            min-width: 25%;
-            padding: $s-size 0;
-        }
+    //     .newContinue-link {
+    //         text-align: center;
+    //         min-width: 25%;
+    //         padding: $s-size 0;
+    //     }
 
-    }
-
-
+    // }
 
     @media only screen and (min-device-width: $desktop-breakpoint) {
-
         .newContinue-link {
             text-align: center;
             min-width: 50%;

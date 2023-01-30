@@ -65,7 +65,7 @@ const discoverAction = {
     finalStep: `Then name this location`,
     encounter: {
         rootURL: '/explore/encounter/',
-        title: 'Click to encounter this location'
+        title: 'Encounter this location'
     },
 }
 
@@ -122,7 +122,7 @@ const encounterAction = {
     finalStep: `When the situation is considered resolved, Leave A Mark`,
     mark: {
         rootURL: '/mark/',
-        title: 'Next: Leave A Mark'
+        title: 'Leave A Mark'
     },
 }
 
