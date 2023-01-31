@@ -51,7 +51,7 @@ const discoverAction = {
     },
     start: `Starting with the player to the `,
     direction: {
-        Homeworld: `right`,
+        homeworld: `right`,
         habitable: `left`,
         uninhabitable: `right`,
         inhabited: `left`,
