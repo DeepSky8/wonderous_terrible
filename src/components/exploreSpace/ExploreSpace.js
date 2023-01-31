@@ -15,7 +15,3 @@ const ExploreSpace = () => {
 }
 
 export default ExploreSpace
-
-// <div className="nextBar-container">
-// <Link className="italic" to='/hyperdrive' >(hyperdrive)</Link>
-// </div>

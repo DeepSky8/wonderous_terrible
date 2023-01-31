@@ -53,7 +53,3 @@ const NewSpecies = () => {
 }
 
 export default NewSpecies
-
-// <SpeciesDisplay
-// info={info}
-// />

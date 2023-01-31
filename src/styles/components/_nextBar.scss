@@ -18,20 +18,6 @@
         color: $orange-tan;
         @include box-shadow-orange;
     }
-
-    @media only screen and (min-device-width: $desktop-breakpoint) {
-        a {
-            @include border;
-            // color: $mid-blue;
-            padding: $s-size;
-            margin: $s-size;
-        }
-
-        a:hover {
-            color: $orange-tan;
-            @include box-shadow-orange;
-        }
-    }
 }
 
 .nextBar-container-blue {
@@ -55,11 +41,29 @@
         color: $orange-tan;
         @include box-shadow-orange;
     }
+}
 
-    @media only screen and (min-device-width: $desktop-breakpoint) {
+@media only screen and (min-device-width: $desktop-breakpoint) {
+    .nextBar-container {
+        font-size: $calcFontSize;
+
         a {
             @include border;
-            // color: $mid-blue;
+            padding: $s-size;
+            margin: $s-size;
+        }
+
+        a:hover {
+            color: $orange-tan;
+            @include box-shadow-orange;
+        }
+    }
+
+    .nextBar-container-blue {
+        font-size: $calcFontSize;
+
+        a {
+            @include border;
             padding: $s-size;
             margin: $s-size;
         }

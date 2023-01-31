@@ -44,16 +44,3 @@ const Hyperdrive = () => {
 }
 
 export default Hyperdrive
-
-// <div className="header-container">
-
-// <div className="backLink-container">
-//     <Link
-//         className="backLink"
-//         to={backLink}
-//     >←</Link>
-// </div>
-
-// <h3>{hyperdriveTitle}</h3>
-// <div className="headerSpacer"></div>
-// </div>

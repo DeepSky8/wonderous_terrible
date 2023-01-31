@@ -1,14 +1,8 @@
 .nav-center-container {
     font-size: $calcFontSizeLarge;
-    // margin-top: $s-size;
     justify-content: center;
     text-align: center;
     display: flex;
-    // border-top: 1px;
-    // border-right: 0;
-    // border-bottom: 1px;
-    // border-left: 0;
-    // border-style: solid;
 }
 
 .nav-link {
@@ -19,7 +13,6 @@
 .nav-link:hover {
     @include nav-link-hover;
     @include nav-link-settings-small;
-    // @include border;
     @include outline;
 }
 
@@ -27,8 +20,6 @@
     @include nav-link-selected;
     @include nav-link-settings-small;
     text-decoration: underline;
-    // @include outline;
-    // @include outline-orange;
 }
 
 .nav-link-selected:hover {
@@ -39,7 +30,6 @@
 @media only screen and (min-device-width: $desktop-breakpoint) {
     .nav-center-container {
         font-size: $calcFontSize;
-        // margin-top: $m-size;
         flex-flow: row wrap;
         align-content: center;
         align-items: space-evenly;

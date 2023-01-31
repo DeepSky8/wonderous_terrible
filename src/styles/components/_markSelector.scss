@@ -4,13 +4,6 @@
     justify-content: center;
     margin: $xs-size 0;
 
-    // .mark-container {
-    //     text-align: center;
-    //     padding: $s-size 0;
-    //     margin: $xs-size 0;
-    //     width: 100%;
-    // }
-
     a {
         @include border;
         text-align: center;
@@ -31,15 +24,7 @@
     .markSelector-container {
         justify-content: space-evenly;
 
-        // .mark-container {
-        //     flex: 0 0 48%;
-        //     margin: $s-size 0;
-        // }
-
         a {
-            // @include border;
-            // padding: $s-size;
-            // margin: $xs-size;
             width: 47%;
         }
     }

@@ -37,8 +37,12 @@ const hyperdriveTable = {
 
 const hyperdriveProcess = {
     test: `Once the bowl is set up, the player who activated hyperdrives crouches down, takes a single d6, and tries to toss it into the bowl.`,
-    success: `If the d6 lands and stays in the bowl, the player succeeds at splicing the timelines and things go the way the player described.`,
-    failure: `If the d6 does not land in the bowl, or if it does not stay in the bowl, things become complicated and the GM introduces the player's change into the story, but they do so in a way that complicates the situation instead of helping to resolve it.`
+    lands: `If the d6 lands and stays in the bowl, the `,
+    bounces: `If the d6 does not land in the bowl, or if it does not stay in the bowl, things `,
+    the: `The `,
+    success: `player succeeds at splicing the timelines and things go the way the player described.`,
+    things: `Things `,
+    failure: `become complicated and the GM introduces the player's change into the story, but they do so in a way that complicates the situation instead of helping to resolve it.`
 }
 
 const hyperdriveTitle = `Hyperdrive`

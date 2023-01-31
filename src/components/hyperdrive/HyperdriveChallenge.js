@@ -59,8 +59,8 @@ const Hyperdrive = () => {
                 <div className="bodyText">
                     <p>{hyperdriveDistance[change]}</p>
                     <p>{hyperdriveProcess.test}</p>
-                    <p>{hyperdriveProcess.success}</p>
-                    <p>{hyperdriveProcess.failure}</p>
+                    <p>{hyperdriveProcess.lands + hyperdriveProcess.success}</p>
+                    <p>{hyperdriveProcess.bounces + hyperdriveProcess.failure}</p>
                 </div>
             }
 
@@ -81,12 +81,26 @@ const Hyperdrive = () => {
 
                     {
                         rollResult.length > 0 &&
-                        <p className="center">
-                            {rollResult}
-                        </p>
+                        <p className="center">{rollResult}</p>
                     }
 
-                    <p className="center">{hyperdriveRoll[change]}</p>
+
+                    {
+                        rollResult.length === 0 &&
+                        <p className="center">{hyperdriveRoll[change]}</p>
+                    }
+
+
+
+                    {
+                        rollResult === 'SUCCESS' &&
+                        <p className="center">{hyperdriveProcess.the + hyperdriveProcess.success}</p>
+                    }
+
+                    {
+                        rollResult === 'FAILURE' &&
+                        <p className="center">{hyperdriveProcess.things + hyperdriveProcess.failure}</p>
+                    }
                 </div>
 
             }

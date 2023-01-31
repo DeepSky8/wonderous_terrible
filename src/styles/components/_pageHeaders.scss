@@ -3,11 +3,10 @@
 
     .leftBlock {
         display: flexbox;
-        // flex-wrap: column wrap;
         width: 20%;
         justify-content: center;
         .leftTop {
-            height: 25%;
+            height: 20%;
         }
 
         .backLink {
@@ -15,17 +14,14 @@
             text-align: center;
             height: 50%;
             width: 100%;
-            // margin: $s-size $xs-size 0 0;
-            // padding: $xs-size;
+            padding: $xs-size;
             font-size: $calcFontSizeExtraLarge;
         }
 
         .backLink:hover {
-            @include outline;
-            @include outline-orange;
-            // @include border;
-            // @include border-orange;
-            // @include box-shadow-orange;
+            @include border;
+            @include border-orange;
+            @include box-shadow-orange;
         }
 
         .leftBottom {
@@ -36,10 +32,47 @@
     .centerBlock {
         width: 60%;
         text-align: center;
+        justify-content: center;
         font-size: $calcFontSizeLarge;
+        h3 {
+            text-align: center;
+            justify-content: center;
+        }
     }
 
     .rightBlock {
         width: 20%;
+    }
+}
+
+@media only screen and (min-device-width: $desktop-breakpoint) {
+    .header-container {
+        .leftBlock {
+            .leftTop {
+                height: 10%;
+            }
+
+            .backLink {
+                justify-content: center;
+                text-align: center;
+                height: 80%;
+                width: 100%;
+                font-size: $calcFontSizeLarge;
+
+                a {
+                    display: inline-block;
+                    width: fill;
+                    height: fill;
+                }
+            }
+
+            .leftBottom {
+                height: 10%;
+            }
+        }
+
+        .centerBlock {
+            font-size: $calcFontSize;
+        }
     }
 }

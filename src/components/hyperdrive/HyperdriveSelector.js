@@ -57,12 +57,3 @@ const HyperdriveSelector = () => {
 }
 
 export default HyperdriveSelector
-
-// {hyperArray.map(([key, value]) => {
-//     return (
-//         <Link
-//             key={key}
-//             to={'/hyperdrive/' + key + '/' + timeline}
-//         >{value}</Link>
-//     )
-// })}

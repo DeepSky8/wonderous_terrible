@@ -20,5 +20,3 @@ const NewContinue = () => {
 }
 
 export default NewContinue
-
-//             <div className="line"></div>
