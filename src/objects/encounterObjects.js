@@ -99,7 +99,7 @@ const encounterAction = {
         "What resources can we exploit?",
     ],
     inhabited: [
-        "What do the want?",
+        "What do they want?",
         "Where are they from?",
         "Where are they going?",
     ],
