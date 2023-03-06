@@ -1,5 +1,6 @@
 {
   "name": "wonderous_terrible",
+  "homepage": "http://wondrous-terrible.surge.sh/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,7 +14,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "npm run build && mv build/index.html build/200.html && surge build"
+
   },
   "eslintConfig": {
     "extends": [
