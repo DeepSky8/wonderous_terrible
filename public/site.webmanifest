@@ -10,6 +10,6 @@
     ],
     "theme_color": "#282c34",
     "background_color": "#282c34",
-    "start_url": "www.wondrous-terrible.surge.sh/",
+    "start_url": "https://wondrous-terrible.surge.sh/",
     "display": "standalone"
 }
