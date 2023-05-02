@@ -8,8 +8,8 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#000000",
-    "background_color": "#000000",
-    "start_url": "wondrous-terrible.surge.sh",
+    "theme_color": "#282c34",
+    "background_color": "#282c34",
+    "start_url": "www.wondrous-terrible.surge.sh/",
     "display": "standalone"
 }

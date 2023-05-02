@@ -1,6 +1,6 @@
 {
-  "name": "wonderous_terrible",
-  "homepage": "http://wondrous-terrible.surge.sh/",
+  "name": "wondrous_terrible",
+  "homepage": "http://wondrous-terrible.surge.sh",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
