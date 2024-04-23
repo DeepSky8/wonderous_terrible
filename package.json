@@ -15,7 +15,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "npm run build && copy build/\/index.html build/\/200.html && surge build"
+    "copy": "cd build && copy index.html 200.html && cd ..",
+    "deploy": "surge build"
   },
   "eslintConfig": {
     "extends": [
